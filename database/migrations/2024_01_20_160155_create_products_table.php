@@ -3,7 +3,9 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-
+use App\Models\Vendor;
+use App\Models\Category;
+use App\Models\Brand;
 return new class extends Migration
 {
     /**
@@ -13,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->id('product_id');
+            $table->tinyText('product_title');
             $table->foreignIdFor(Vendor::class);
             $table->foreignIdFor(Category::class);
             $table->foreignIdFor(Brand::class);
@@ -21,7 +23,7 @@ return new class extends Migration
             $table->tinyText('title_en')->nullable();
             $table->text('description');
             $table->integer('price');
-            $table->smallInteger('rating')->default(0);
+            $table->float('rating')->default(0);
             $table->bigInteger('stock');
             $table->timestamps();
         });

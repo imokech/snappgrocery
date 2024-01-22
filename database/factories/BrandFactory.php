@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Ybazli\Faker\Facades\Faker;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Brand>
@@ -17,7 +18,7 @@ class BrandFactory extends Factory
     public function definition(): array
     {
         return [
-            'brand_fa' => $this->faker->name->unique(),
+            'brand_fa' => Faker::word(),
         ];
     }
 }

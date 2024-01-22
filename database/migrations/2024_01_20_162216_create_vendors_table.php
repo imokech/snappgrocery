@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('vendors', function (Blueprint $table) {
             $table->id();
+            $table->tinyText('name');
             $table->double('lat', 10, 6);
             $table->double('long', 10, 6);
             $table->timestamps();

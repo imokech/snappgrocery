@@ -6,7 +6,7 @@ use App\Models\Brand;
 use App\Http\Requests\StoreBrandRequest;
 use App\Http\Requests\UpdateBrandRequest;
 
-class BrandController extends Controller
+class BrandController extends BaseController
 {
     /**
      * Display a listing of the resource.

@@ -6,7 +6,7 @@ use App\Models\Vendor;
 use App\Http\Requests\StoreVendorRequest;
 use App\Http\Requests\UpdateVendorRequest;
 
-class VendorController extends Controller
+class VendorController extends BaseController
 {
     /**
      * Display a listing of the resource.
