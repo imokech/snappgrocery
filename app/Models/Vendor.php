@@ -9,7 +9,7 @@ class Vendor extends Model
 {
     use HasFactory;
 
-    public function product(): HasOne
+    public function products()
     {
         return $this->belongsToMany(Product::class);
     }
