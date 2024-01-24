@@ -15,6 +15,9 @@ class VendorService implements VendorInterface
 {
     public function getNearProductsByGeoLocation(float $lat, float $long, int $sort)
     {
+        /**
+         * Note: it's better to set a condition to have exact near vendors by a threshold
+         */
         $query = DB::table('vendors');
         $query->leftJoin('products', 'products.vendor_id', '=', 'vendors.id');
         $query->select('products.*');

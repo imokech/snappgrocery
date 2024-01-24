@@ -18,6 +18,10 @@ class PaymentService implements PaymentInterface
         $product->stock = $stock - 1;
         $product->save();
 
+        /**
+         * it's better to record payment details
+         */
+
         return __('messages.successful_payment', ['name' => $product->title_fa]);
     }
 }
