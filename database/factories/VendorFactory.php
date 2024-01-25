@@ -18,7 +18,7 @@ class VendorFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => Faker::fullName(),
+            'name' => $this->faker->company,//Faker::fullName(),
             'lat' => $this->faker->latitude,
             'long' => $this->faker->longitude,
         ];

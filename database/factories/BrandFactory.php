@@ -18,7 +18,7 @@ class BrandFactory extends Factory
     public function definition(): array
     {
         return [
-            'brand_fa' => Faker::word(),
+            'brand_fa' => $this->faker->company//Faker::word(),
         ];
     }
 }

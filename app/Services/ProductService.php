@@ -30,7 +30,6 @@ class ProductService implements ProductInterface
 
     public function getProductsByVendorId(int $vendorID, string $sortBy, string $sortDirection): JsonResource
     {
-
         $products = Cache::remember(static::PRODUCT_LIST_BY_VENDOR . $vendorID, now()->addMinutes(10),
             function () use ($vendorID, $sortBy, $sortDirection) {
                 $products = Product::where('vendor_id', $vendorID)->where('stock', '>', 0);

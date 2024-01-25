@@ -17,7 +17,7 @@ class CategoryFactory extends Factory
     public function definition(): array
     {
         return [
-            'category_title' => Faker::word(),
+            'category_title' => $this->faker->company . ' ' . $this->faker->colorName//Faker::word(),
         ];
     }
 }

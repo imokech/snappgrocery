@@ -23,7 +23,7 @@ class ProductFactory extends Factory
         $vendor = Vendor::factory()->create();
         $category = Category::factory()->create();
         $brand = Brand::factory()->create();
-        $name = Faker::word();
+        $name = $this->faker->title;//Faker::word();
 
         return [
             'vendor_id' => $vendor->id,
@@ -32,10 +32,19 @@ class ProductFactory extends Factory
             'title_fa' => $name,
             'title_en' => $this->faker->name,
             'product_title' => $name,
-            'description' => Faker::paragraph(),
+            'description' => $this->faker->text(),//Faker::paragraph(),
             'price' => $this->faker->numberBetween(1000, 150000),
             'rating' => $this->faker->randomFloat(1, 0, 5),
             'stock' => $this->faker->numberBetween(0, 100),
         ];
+    }
+
+    public function withSpecificVendor($id)
+    {
+        return $this->state(function (array $attributes) use ($id) {
+            return [
+                'vendor_id' => $id,
+            ];
+        });
     }
 }

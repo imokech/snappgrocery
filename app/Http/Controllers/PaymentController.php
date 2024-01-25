@@ -19,6 +19,6 @@ class PaymentController extends BaseController
     {
         $response = $this->paymentService->purchase($request->productId);
 
-        return $this->successResponse($response);
+        return $this->successResponse($response, '201');
     }
 }
